@@ -43,7 +43,7 @@ class ShowPdf():
             open_pdf = fitz.open(pdf_location)
 
             for page in open_pdf:
-                pix = page.getPixmap()
+                pix = page.get_pixmap()
                 pix1 = fitz.Pixmap(pix,0) if pix.alpha else pix
                 img = pix1.getImageData("ppm")
                 timg = PhotoImage(data = img)
